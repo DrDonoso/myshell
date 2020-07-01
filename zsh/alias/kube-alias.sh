@@ -17,15 +17,15 @@ function kubesetns () {
 function kubepods () {
     echo "Select the namespace to see the pods:"
     ns=$(kubectl get ns | fzf --height 30% --layout reverse | awk '{print $1}')
-    kubectl get pods -n "$ns"
     echo "Namespace: $ns"
+    kubectl get pods -n "$ns"
 }
 
 function kubesvcs () {
     echo "Select the namespace to see the services:"
     ns=$(kubectl get ns | fzf --height 30% --layout reverse  | awk '{print $1}')
-    kubectl get svc -n "$ns"
     echo "Namespace: $ns"
+    kubectl get svc -n "$ns"
 }
 
 function kubelogs () {
