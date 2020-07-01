@@ -4,7 +4,7 @@ function kubeusecontext(){
     echo "Select the context to use:"
     context=$(kubectl config get-contexts | fzf --height 30% --layout reverse | awk '{print $1}')
     kubectl config use-context $context
-    echo "context: $ns"
+    echo "Context: $ns"
 }
 
 function kubesetns () {
